@@ -86,7 +86,7 @@ All the demos are builded for cartridges, but you can change this to multiboot b
 
 ## Contributing
 
-To contribute, see [CONTRIBUTING.md]().
+To contribute, see [CONTRIBUTING.md](https://github.com/LinoBigatti/APIagb-dev/blob/developement/CONTRIBUTING.md).
 
 ## Built With
 
