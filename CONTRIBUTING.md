@@ -17,7 +17,7 @@ Add a new file per function.
 
 For IO registers, use ``IO_``, and then the name of the register stated on [GBATek](https://problemkaputt.de/gbatek.htm), all uppercase.
 
-For IO options, use the name of the register in lowercase, for example, `dispcnt_`, and then the option name, the option value needs to be `1<<x` or `0` for binary parameters, and an inline function for decimal parameters. For example;
+For IO options, use the name of the register in lowercase, for example, `dispcnt_`, and then the option name, the option value needs to be `1<<x` or `0` for binary parameters, and an inline function for decimal parameters. For example:
 
 ```C
 static inline dispcnt_mode(u33 mode)
@@ -44,7 +44,7 @@ Brackets must be ahead of the function, like this: `u32 foo(u64 baz) {`.
 
 ## To do:
 
-Once all of this point are done, the repo will be cloned into [the stable repositorie](https://github.com/linobigatti/APIagb-stable).
+Once all of this point are done, the repo will be cloned into [the stable repository](https://github.com/linobigatti/APIagb).
 
 * Fix the input demo to read the buttons L and R.
 * Optimize vertical and horizontal line drawing on mx_line.
