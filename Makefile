@@ -84,13 +84,6 @@ Mode5Demo :
 Mode5Demo_clean :
 	@cd demostrations/Mode5Demo && $(MAKE) clean
 
-InputDemo :
-	@cd demostrations/InputDemo && $(MAKE)
-	@echo $@ compiled and builded.
-
-InputDemo_clean :
-	@cd demostrations/InputDemo && $(MAKE) clean
-
 #Build API.
 APIagb : $(LIBCOBJS) $(LIBTHUMBOBJS) $(LIBARMOBJS)
 	@$(AR) $(ARFLAGS) libAPIagb.a $^
@@ -127,6 +120,4 @@ err_no_target:
 	@echo "Mode3Demo: Build the demo for Mode 3."
 	@echo "Mode4ImageDemo: Build the image demo for Mode 4."
 	@echo "Mode5ImageDemo: Build the image demo for Mode 5."
-	@echo "Mode5Demo: Build the demo for Mode 5."
-	@echo "InputDemo: Build the demo for the input functions."
-	
+	@echo "Mode5Demo: Build the demo for Mode 5."	
