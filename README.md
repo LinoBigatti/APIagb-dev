@@ -84,6 +84,10 @@ make Mode5ImageDemo
 
 All the demos are builded for cartridges, but you can change this to multiboot by changing the `SPECS` variable of the demo Makefile to `gba_mb`.
 
+## Contributing
+
+To contribute, see [CONTRIBUTING.md]().
+
 ## Built With
 
 * [DevkitPro](https://github.com/devkitPro) - The DevkitARM provider.
