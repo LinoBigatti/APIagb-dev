@@ -5,7 +5,7 @@
 
 #include <basics/types.h>
 #include <bitmap/mode4/m4_defs.h>
-#include <bitmap/mode4/m4_pixel.h>
+#include <bitmap/mode4/m4_line.h>
 
 #ifdef __cplusplus
 extern "C" {

@@ -5,7 +5,7 @@
 
 #include <basics/types.h>
 #include <bitmap/mode5/m5_defs.h>
-#include <bitmap/mode5/m5_pixel.h>
+#include <bitmap/mode5/m5_line.h>
 
 #ifdef __cplusplus
 extern "C" {
