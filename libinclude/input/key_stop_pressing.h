@@ -9,7 +9,7 @@
 #include <input/key_is_not_pressed.h>
 #include <input/key_was_pressed.h>
 
-static inline BOOL8 key_stop_pressing(u16 key)
+static inline u32 key_stop_pressing(u16 key)
 { return (key_is_not_pressed(key) & key_was_pressed(key)); }
 
 #endif

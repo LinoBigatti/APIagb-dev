@@ -7,7 +7,7 @@
 #include <IO/regions.h>
 #include <input/key_defs.h>
 
-static inline BOOL8 key_was_pressed(u16 key)
+static inline u32 key_was_pressed(u16 key)
 { return previous_key & key; }
 
 #endif

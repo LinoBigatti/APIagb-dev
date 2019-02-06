@@ -7,7 +7,7 @@
 #include <IO/regions.h>
 #include <input/key_defs.h>
 
-static inline BOOL8 key_state(u16 key)
+static inline u32 key_state(u32 key)
 { return current_key & key; }
 
 #endif

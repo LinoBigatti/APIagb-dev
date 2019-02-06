@@ -10,7 +10,6 @@ typedef unsigned char u8;
 typedef unsigned short u16;
 typedef unsigned int u32;
 typedef unsigned long long u64;
-typedef unsigned char BOOL8;
 
 typedef signed char s8;
 typedef signed short s16;
@@ -36,10 +35,5 @@ typedef const signed char cs8;
 typedef const signed short cs16;
 typedef const signed int cs32;
 typedef const signed long long cs64;
-
-typedef u8 uint8;
-typedef u16 uint16;
-typedef u32 uint32;
-typedef u64 uint64;
 
 #endif

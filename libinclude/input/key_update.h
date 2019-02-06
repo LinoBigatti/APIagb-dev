@@ -8,7 +8,7 @@
 
 static inline void key_update(void) {
 	previous_key = current_key;
-	current_key = ~(IO_KEYINPUT);
+	current_key = ~(IO_KEYINPUT) & 0x03FF;
 }
 
 #endif
