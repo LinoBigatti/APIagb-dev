@@ -5,7 +5,6 @@
 
 #include <bitmap/mode4/m4_defs.h>
 #include <bitmap/mode4/m4_pixel.h>
-#include <bitmap/mode4/m4_color.h>
 #include <bitmap/mode4/m4_line.h>
 #include <bitmap/mode4/m4_rectangle.h>
 #include <bitmap/mode4/m4_frame.h>

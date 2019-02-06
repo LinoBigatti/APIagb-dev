@@ -56,6 +56,14 @@ This demo shows the image copying routine for mode 3. You can build it like this
 make Mode3ImageDemo
 ```
 
+### Mode4Demo
+
+This demo shows the line, circle, frame and rectangle drawing algorithms for mode 4, and the mode 4 page flip handler. You can build it like this:
+
+```bash
+make Mode4Demo
+```
+
 ### Mode4ImageDemo
 
 This demo shows the image and palette copying routines for mode 4, and the mode 4 page flip handler. You can build it like this:
@@ -78,6 +86,14 @@ This demo shows the image copying routine for mode 5, and the mode 5 page flip h
 
 ```bash
 make Mode5ImageDemo
+```
+
+### Mode5Demo
+
+This demo shows the keypad handler routines. You can build it like this:
+
+```bash
+make InputDemo
 ```
 
 ## Testing on a real GBA
@@ -103,6 +119,6 @@ To appear here, contribute to the library and/or its demos.
 
 ## Acknowledgments
 
-* TONC, because some of my functions are based on TONC's ones.
+* [TONC](https://www.coranac.com/tonc/text/toc.htm), because some of my functions are based on TONC's ones.
 * [Compumax](https://github.com/CompuMaxx), because he helps me when my code don't works.
 * [Kaiser](https://github.com/kaisermg5), Idem.

@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 void m4_line(u32 x1, u32 y1, u32 x2, u32 y2, m4_color_entry clr) {
-	int x, y, dx, dy, dxabs, dyabs, px, py, xend, yend, ii;
+	int x, y, dx, dy, dxabs, dyabs, px, py, yend, xend, ii;
 	
 	if(x1 > M4_WIDTH) { //Clip x1
 		x1 = M4_WIDTH;
@@ -29,13 +29,37 @@ void m4_line(u32 x1, u32 y1, u32 x2, u32 y2, m4_color_entry clr) {
 	py = 2 * dxabs - dyabs;
 	
 	if(dy == 0) { //Horizontal.
-		if(dx > 0) { //Increment.
-			for(ii = 0; ii < dx; ii++) {
-				m4_pixel((ii + x1), y1, clr);
-			}
-		} else { //Decrement.
-			for(ii = 0; ii > dx; ii--) {
-				m4_pixel((ii + x1), y1, clr);
+		u32 width;
+		
+		if(x2 > x1) {
+			width = x2 - x1 + 1;
+		} else {
+			width = x1 - x2 + 1;
+		}
+		
+		u16 *dst = (u16*)(m4_back_vram + y1 * (M4_WIDTH / 2) + (x1 & ~1));
+		
+		if(x1 & 1) {
+			*dst = (*dst & 0x00FF) + (clr << 8);
+			width--;
+			dst++;
+		}
+		
+		if(width & 1) {
+			dst[width / 2] = (dst[width / 2] & 0xFF00) + clr;
+		}
+		
+		width /= 2;
+		
+		if(width) {
+			if(x2 > x1) {
+				for(ii = 0; ii < width; ii++) {
+					dst[ii] = clr | (clr << 8);
+				}
+			} else {
+				for(ii = width; ii > 0; ii--) {
+					dst[ii] = clr | (clr << 8);
+				}
 			}
 		}
 	} else if(dx == 0) { //Vertical.

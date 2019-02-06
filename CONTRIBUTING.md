@@ -48,5 +48,5 @@ Once all of this point are done, the repo will be cloned into [the stable reposi
 
 * Fix the input demo to read the buttons L and R.
 * Optimize vertical and horizontal line drawing on mx_line. ✓
-* Optimize the mode 4 line code.
-* Create a "Mode4Demo".
+* Optimize the mode 4 line code. ✓
+* Create a "Mode4Demo". ✓

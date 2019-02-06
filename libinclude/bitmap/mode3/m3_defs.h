@@ -8,8 +8,8 @@
 
 typedef u16 m3_color;
 
-#define M3_WIDTH 240
-#define M3_HEIGHT 160
+#define M3_WIDTH 239
+#define M3_HEIGHT 159
 
 #define m3_vram ((m3_color*)(MEM_VRAM))
 #endif
