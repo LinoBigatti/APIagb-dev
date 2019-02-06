@@ -18,7 +18,7 @@ Read [this guide](https://devkitpro.org/wiki/Getting_Started) to install DevkitA
 
 ### Building the library.
 
-First, go to the directorie where you downloaded the library:
+First, go to the directory where you downloaded the library:
 
 ```bash
 cd /path/to/lib/
@@ -98,7 +98,7 @@ make InputDemo
 
 ## Testing on a real GBA
 
-All the demos are builded for cartridges, but you can change this to multiboot by changing the `SPECS` variable of the demo Makefile to `gba_mb`.
+All the demos were built for cartridges, but you can change this to multiboot by changing the `SPECS` variable of the demo Makefile to `gba_mb`.
 
 ## Contributing
 
@@ -108,7 +108,7 @@ To contribute, see [CONTRIBUTING.md](https://github.com/LinoBigatti/APIagb-dev/b
 
 * [DevkitPro](https://github.com/devkitPro) - The DevkitARM provider.
 * [GNU Make](https://www.gnu.org/software/make/) - The build system.
-* [GBATek](https://problemkaputt.de/gbatek.htm) - The holy grial of GBA developement.
+* [GBATek](https://problemkaputt.de/gbatek.htm) - The holy grail of GBA development.
 * [TONC](https://www.coranac.com/tonc/text/toc.htm) - The guide to GBA.
 
 ## Authors
