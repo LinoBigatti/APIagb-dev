@@ -1,17 +1,18 @@
 #include <basics/types.h>
 #include <basics/vsync.h>
-#include <basics/tile.h>
 #include <IO.h>
+#include <bitmap/mode4.h>
 #include <input.h>
 #include <object.h>
 
-#include "mario.h"
+#include "marioBros.h"
 #include "marioPal.h"
+#include "bgPal.h"
 
 int main(void) {
 	obj_clear_all();
 	
-	obj_tiles_32(marioTiles, marioTilesLen / 4, 4, 0, 4);
+	obj_tiles_32(marioBrosTiles, marioBrosTilesLen / 4, 4, 0, 4);
 	
 	obj_palette_32(marioPalette, 0);
 	
@@ -19,7 +20,7 @@ int main(void) {
 	
 	obj_attributes *mario = &obj_reg_memory[0];
 	
-	int x = 0, y = 0;
+	u32 x = 0, y = 0, hflip = 0, vflip = 0, basetile = 0;
 	
 	mario->attr0 = attr0_build(attr0_Y(0), attr0_regular, attr0_normal, 0, attr0_4bpp, attr0_square);
 	mario->attr1 = attr1_regular_build(attr1_X(0), 0, 0, attr1_size(1));
@@ -51,9 +52,37 @@ int main(void) {
 			}
 		}
 		
+		if(key_start_pressing(BUTTON_A)) {
+			if(hflip != 0) {
+				hflip = 0;
+				x += 3;
+			} else {
+				hflip = attr1_hflip;
+				x -= 3;
+			}
+		}
+		if(key_start_pressing(BUTTON_B)) {
+			if(vflip != 0) {
+				vflip = 0;
+			} else {
+				vflip = attr1_vflip;
+			}
+		}
+		
+		if(key_start_pressing(BUTTON_L)) {
+			if(basetile != 0) {
+				basetile = 0;
+			}
+		}
+		if(key_start_pressing(BUTTON_R)) {
+			if(basetile == 0) {
+				basetile = 4;
+			}
+		}
+		
 		mario->attr0 = attr0_build(attr0_Y(y), attr0_regular, attr0_normal, 0, attr0_4bpp, attr0_square);
-		mario->attr1 = attr1_regular_build(attr1_X(x), 0, 0, attr1_size(1));
-		mario->attr2 = attr2_build(attr2_base_tile(0), attr2_priority(0), attr2_palbank(0));
+		mario->attr1 = attr1_regular_build(attr1_X(x), hflip, vflip, attr1_size(1));
+		mario->attr2 = attr2_build(attr2_base_tile(basetile), attr2_priority(0), attr2_palbank(0));
 	}
 	
 	return 0;
