@@ -98,6 +98,13 @@ InputDemo :
 InputDemo_clean :
 	@cd demostrations/InputDemo && $(MAKE) clean
 
+SpriteDemo :
+	@cd demostrations/SpriteDemo && $(MAKE)
+	@echo $@ compiled and builded.
+
+SpriteDemo_clean :
+	@cd demostrations/SpriteDemo && $(MAKE) clean
+
 #Build API.
 APIagb : $(LIBCOBJS) $(LIBTHUMBOBJS) $(LIBARMOBJS)
 	@$(AR) $(ARFLAGS) libAPIagb.a $^
