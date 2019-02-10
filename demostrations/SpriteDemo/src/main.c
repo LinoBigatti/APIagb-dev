@@ -7,7 +7,6 @@
 
 #include "marioBros.h"
 #include "marioPal.h"
-#include "bgPal.h"
 
 int main(void) {
 	obj_clear_all();
