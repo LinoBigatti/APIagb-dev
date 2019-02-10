@@ -105,6 +105,13 @@ SpriteDemo :
 SpriteDemo_clean :
 	@cd demostrations/SpriteDemo && $(MAKE) clean
 
+BgDemo :
+	@cd demostrations/BgDemo && $(MAKE)
+	@echo $@ compiled and builded.
+
+BgDemo_clean :
+	@cd demostrations/BgDemo && $(MAKE) clean
+
 #Build API.
 APIagb : $(LIBCOBJS) $(LIBTHUMBOBJS) $(LIBARMOBJS)
 	@$(AR) $(ARFLAGS) libAPIagb.a $^
@@ -144,3 +151,5 @@ err_no_target:
 	@echo "Mode5ImageDemo: Build the image demo for Mode 5."
 	@echo "Mode5Demo: Build the demo for Mode 5."
 	@echo "InputDemo: Build the demo for the input handlers."
+	@echo "SpriteDemo: Build the demo for the sprite handlers."
+	@echo "BgDemo: Build the demo for the bg handlers."
