@@ -12,12 +12,13 @@ include $(DEVKITARM)/gba_rules
 
 #Options.
 
-TARGET = template
+TARGET = ExtendedBgDemo
 SRC_BASE = src
-include_no_format = include ../libinclude
+include_no_format = include ../../libinclude
 INCLUDE = $(include_no_format:%=-I%)
 BUILD = build
 START = main
+GFX = gfx
 SPECS = gba
 
 #Functions.
@@ -27,7 +28,7 @@ rwildcard = $(shell find $1 -name "$2")
 #Source files and builded files.
 
 CSRC = $(call rwildcard,$(SRC_BASE)/,*.c)
-CXXSRC = $(call rwildcard, $(SRC_BASE)/,*.cpp)
+CXXSRC = $(call rwildcard,$(SRC_BASE)/,*.cpp)
 ASSRC = $(call rwildcard,$(SRC_BASE)/,*.s)
 
 COBJS = $(CSRC:$(SRC_BASE)/%.c=$(BUILD)/%.c.o)
@@ -55,7 +56,7 @@ CFLAGS := -g -Wall -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -fomit-frame-pointer -ffas
 CFLAGS  += $(INCLUDE)
 CXXFLAGS := $(CFLAGS) -fno-rtti -fno-exceptions
 ASFLAGS := -g $(ARCH)
-LDFLAGS = -g $(ARCH) -Wl,-Map,$(TARGET).map --entry $(START) -specs=$(SPECS).specs -lAPIagb -L../ -L.
+LDFLAGS = -g $(ARCH) -Wl,-Map,$(TARGET).map --entry $(START) -specs=$(SPECS).specs -lAPIagb -L../.. -L.
 
 #Building rules.
 
@@ -85,9 +86,10 @@ $(ASOBJS) : $(BUILD)/%.s.o : $(SRC_BASE)/%.s
 
 #Cleaning.
 
-.PHONY : clean
+.PHONY : clean gfx
 clean :
 	@rm -f $(OBJS)
 	@rm -f *.gba
 	@rm -f $(BUILD)/*.elf
+	@rm -f *.map
 	@echo Cleaned.
