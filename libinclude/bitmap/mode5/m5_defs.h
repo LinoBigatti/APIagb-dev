@@ -8,8 +8,8 @@
 
 typedef u16 m5_color;
 
-#define M5_WIDTH 159
-#define M5_HEIGHT 127
+#define M5_WIDTH 160
+#define M5_HEIGHT 128
 
 extern m5_color *m5_front_vram;
 extern m5_color *m5_back_vram;

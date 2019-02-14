@@ -17,7 +17,7 @@ int main(void) {
 	m3_rectangle(101, 61, 39, 39, m3_RGB_color(31, 31, 31));
 	
 	m3_circle(0, 0, 30, m3_RGB_color(31, 0, 0));
-	m3_circle(0, 120, 30, m3_RGB_color(31, 0, 0));
+	m3_circle(0, 160, 30, m3_RGB_color(31, 0, 0));
 	
 	m3_line(0, 0, 240, 160, m3_RGB_color(31, 0, 31));
 	m3_line(240, 0, 0, 160, m3_RGB_color(31, 0, 31));
