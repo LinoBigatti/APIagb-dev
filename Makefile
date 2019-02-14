@@ -105,6 +105,13 @@ SpriteDemo :
 SpriteDemo_clean :
 	@cd demostrations/SpriteDemo && $(MAKE) clean
 
+AffineSpriteDemo :
+	@cd demostrations/AffineSpriteDemo && $(MAKE)
+	@echo $@ compiled and builded.
+
+AffineSpriteDemo_clean :
+	@cd demostrations/AffineSpriteDemo && $(MAKE) clean
+
 BgDemo :
 	@cd demostrations/BgDemo && $(MAKE)
 	@echo $@ compiled and builded.
@@ -159,4 +166,5 @@ err_no_target:
 	@echo "Mode5Demo: Build the demo for Mode 5."
 	@echo "InputDemo: Build the demo for the input handlers."
 	@echo "SpriteDemo: Build the demo for the sprite handlers."
+	@echo "SpriteDemo: Build the demo for the affine object handlers."
 	@echo "BgDemo: Build the demo for the bg handlers."

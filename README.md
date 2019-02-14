@@ -104,6 +104,30 @@ This demo shows the object handlers and a working sprite:
 make SpriteDemo
 ```
 
+### BgDemo
+
+This demo shows the background handlers and a working BG:
+
+```bash
+make BgDemo
+```
+
+### ExtendedBgDemo
+
+This demo shows an extended BG and a technique I like to call "Map Banking":
+
+```bash
+make ExtendedBgDemo
+```
+
+### AffineSpriteDemo
+
+This demo shows an affine sprite and applies transformations to it:
+
+```bash
+make AffineSpriteDemo
+```
+
 ## Testing on a real GBA
 
 All the demos were built for cartridges, but you can change this to multiboot by changing the `SPECS` variable of the demo Makefile to `gba_mb`.

@@ -12,5 +12,13 @@
 #include <object/obj_palette_16.h>
 #include <object/obj_palette_32.h>
 #include <object/obj_clear_all.h>
+#include <object/obj_aff_identity.h>
+#include <object/obj_aff_rotate.h>
+#include <object/obj_aff_scale.h>
+#include <object/obj_aff_shear.h>
+#include <object/obj_aff_rotate_and_scale.h>
+#include <object/obj_aff_rotate_and_shear.h>
+#include <object/obj_aff_scale_and_shear.h>
+#include <object/obj_aff_rotate_scale_and_shear.h>
 
 #endif
