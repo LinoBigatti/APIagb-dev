@@ -46,4 +46,5 @@ Brackets must be ahead of the function, like this: `u32 foo(u64 baz) {`.
 
 Once all of this point are done, the repo will be cloned into [the stable repository](https://github.com/linobigatti/APIagb).
 
-* Check, fix, and upload all the demos. ✓
+* Add affine BG support. ✓
+* Add an AffineBgDemo. ✓

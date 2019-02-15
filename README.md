@@ -128,6 +128,14 @@ This demo shows an affine sprite and applies transformations to it:
 make AffineSpriteDemo
 ```
 
+### AffineBgDemo
+
+This demo shows an affine background and applies transformations to it:
+
+```bash
+make AffineBgDemo
+```
+
 ## Testing on a real GBA
 
 All the demos were built for cartridges, but you can change this to multiboot by changing the `SPECS` variable of the demo Makefile to `gba_mb`.

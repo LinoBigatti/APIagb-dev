@@ -22,6 +22,18 @@
 #define IO_BG2VOFS (*(u16*)(MEM_IO + 0x001A))
 #define IO_BG3HOFS (*(u16*)(MEM_IO + 0x001C))
 #define IO_BG3VOFS (*(u16*)(MEM_IO + 0x001E))
+#define IO_BG2PA (*(s16*)(MEM_IO + 0x0020))
+#define IO_BG2PB (*(s16*)(MEM_IO + 0x0022))
+#define IO_BG2PC (*(s16*)(MEM_IO + 0x0024))
+#define IO_BG2PD (*(s16*)(MEM_IO + 0x0026))
+#define IO_BG2X (*(s32*)(MEM_IO + 0x0028))
+#define IO_BG2Y (*(s32*)(MEM_IO + 0x002C))
+#define IO_BG3PA (*(s16*)(MEM_IO + 0x0030))
+#define IO_BG3PB (*(s16*)(MEM_IO + 0x0032))
+#define IO_BG3PC (*(s16*)(MEM_IO + 0x0034))
+#define IO_BG3PD (*(s16*)(MEM_IO + 0x0036))
+#define IO_BG3X (*(s32*)(MEM_IO + 0x0038))
+#define IO_BG3Y (*(s32*)(MEM_IO + 0x003C))
 
 //Key registers.
 #define IO_KEYINPUT (*(vu16*)(MEM_IO + 0x0130))

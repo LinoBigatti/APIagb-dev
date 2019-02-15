@@ -126,6 +126,13 @@ ExtendedBgDemo :
 ExtendedBgDemo_clean :
 	@cd demostrations/ExtendedBgDemo && $(MAKE) clean
 
+AffineBgDemo :
+	@cd demostrations/AffineBgDemo && $(MAKE)
+	@echo $@ compiled and builded.
+
+AffineBgDemo_clean :
+	@cd demostrations/AffineBgDemo && $(MAKE) clean
+
 #Build API.
 APIagb : $(LIBCOBJS) $(LIBTHUMBOBJS) $(LIBARMOBJS)
 	@$(AR) $(ARFLAGS) libAPIagb.a $^
@@ -166,5 +173,7 @@ err_no_target:
 	@echo "Mode5Demo: Build the demo for Mode 5."
 	@echo "InputDemo: Build the demo for the input handlers."
 	@echo "SpriteDemo: Build the demo for the sprite handlers."
-	@echo "SpriteDemo: Build the demo for the affine object handlers."
+	@echo "AffineSpriteDemo: Build the demo for the affine object handlers."
 	@echo "BgDemo: Build the demo for the bg handlers."
+	@echo "ExtendedBgDemo: Build a demo with an extended BG.."
+	@echo "AffineBgDemo: Build the demo for the affine BG handlers."
