@@ -1,7 +1,6 @@
 #include <basics/types.h>
 #include <basics/vsync.h>
 #include <IO.h>
-#include <bitmap/mode4.h>
 #include <input.h>
 #include <object.h>
 

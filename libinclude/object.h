@@ -20,5 +20,6 @@
 #include <object/obj_aff_rotate_and_shear.h>
 #include <object/obj_aff_scale_and_shear.h>
 #include <object/obj_aff_rotate_scale_and_shear.h>
+#include <object/obj_mosaic.h>
 
 #endif

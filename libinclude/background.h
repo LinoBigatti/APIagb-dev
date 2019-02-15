@@ -19,5 +19,6 @@
 #include <background/bg_aff_rotate_and_shear.h>
 #include <background/bg_aff_scale_and_shear.h>
 #include <background/bg_aff_rotate_scale_and_shear.h>
+#include <background/bg_mosaic.h>
 
 #endif

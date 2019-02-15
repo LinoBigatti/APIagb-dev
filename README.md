@@ -2,6 +2,8 @@
 
 A library to manage the GBA hardware, built with C and with compatibility with C, C++ and Assembly.
 
+[![forthebadge](https://forthebadge.com/images/badges/compatibility-club-penguin.svg)](https://forthebadge.com)
+
 ## Getting Started
 
 Follow these instructions to build the library and the various demos.
@@ -134,6 +136,14 @@ This demo shows an affine background and applies transformations to it:
 
 ```bash
 make AffineBgDemo
+```
+
+### MosaicDemo
+
+This demo shows a background and a sprite, and applies a mosaic on them:
+
+```bash
+make MosaicDemo
 ```
 
 ## Testing on a real GBA

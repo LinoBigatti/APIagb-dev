@@ -92,6 +92,16 @@ static inline u16 bg3cnt_sbb(u16 sbb)
 static inline u16 bg3cnt_size(u16 size)
 { return size << 14; }
 
+//IO_MOSAIC
+static inline u16 mosaic_BH(u16 BH)
+{ return BH << 0; }
+static inline u16 mosaic_BV(u16 BV)
+{ return BV << 4; }
+static inline u16 mosaic_OH(u16 OH)
+{ return OH << 8; }
+static inline u16 mosaic_OV(u16 OV)
+{ return OV << 12; }
+
 //IO_KEYINPUT
 #define keyinput_A 1
 #define keyinput_B 1 << 1

@@ -133,6 +133,13 @@ AffineBgDemo :
 AffineBgDemo_clean :
 	@cd demostrations/AffineBgDemo && $(MAKE) clean
 
+MosaicDemo :
+	@cd demostrations/MosaicDemo && $(MAKE)
+	@echo $@ compiled and builded.
+
+MosaicDemo_clean :
+	@cd demostrations/MosaicDemo && $(MAKE) clean
+
 #Build API.
 APIagb : $(LIBCOBJS) $(LIBTHUMBOBJS) $(LIBARMOBJS)
 	@$(AR) $(ARFLAGS) libAPIagb.a $^
@@ -177,3 +184,4 @@ err_no_target:
 	@echo "BgDemo: Build the demo for the bg handlers."
 	@echo "ExtendedBgDemo: Build a demo with an extended BG.."
 	@echo "AffineBgDemo: Build the demo for the affine BG handlers."
+	@echo "MosaicDemo: Build the demo for the mosaic handler."
