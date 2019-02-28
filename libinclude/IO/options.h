@@ -25,6 +25,9 @@ static inline u16 dispcnt_mode(u16 mode)
 #define dispcnt_WIN1 1 << 14
 #define dispcnt_WINOBJ 1 << 15
 
+//IO_GREENSWAP
+#define greenswap_gswap 1
+
 //IO_DISPSTAT
 static inline u16 dispstat_vblank(void)
 { return (IO_DISPSTAT & 1); }
@@ -101,6 +104,34 @@ static inline u16 mosaic_OH(u16 OH)
 { return OH << 8; }
 static inline u16 mosaic_OV(u16 OV)
 { return OV << 12; }
+
+//IO_BLDCNT
+#define bldcnt_ABG0 1
+#define bldcnt_ABG1 1 << 1
+#define bldcnt_ABG2 1 << 2
+#define bldcnt_ABG3 1 << 3
+#define bldcnt_AOBJ 1 << 4
+#define bldcnt_ABD 1 << 5
+#define bldcnt_off 0
+#define bldcnt_normal 1 << 6
+#define bldcnt_white 2 << 6
+#define bldcnt_black 3 << 6
+#define bldcnt_BBG0 1 << 8
+#define bldcnt_BBG1 1 << 9
+#define bldcnt_BBG2 1 << 10
+#define bldcnt_BBG3 1 << 11
+#define bldcnt_BOBJ 1 << 12
+#define bldcnt_BBD 1 << 13
+
+//IO_BLDALPHA
+static inline u16 bldalpha_EVA(u32 EVA)
+{ return (EVA << 4); }
+static inline u16 bldalpha_EVB(u32 EVB)
+{ return ((EVB << 4) << 8); }
+
+//IO_BLDY
+static inline u16 bldy_value(u32 value)
+{ return (value << 4); }
 
 //IO_KEYINPUT
 #define keyinput_A 1

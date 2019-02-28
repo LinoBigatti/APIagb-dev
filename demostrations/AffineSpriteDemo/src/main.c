@@ -14,14 +14,14 @@ int main(void) {
 	obj_clear_all();
 	
 	obj_tiles_32(bowserTiles, bowserTilesLen / 4, 4, 0, 8);
-	obj_palette_32(bowserPal, 0);
+	obj_palette_32(bowserPal, bowserPalLen / 4, 0);
 	
 	bg_tileset_32(bgTiles, bgTilesLen / 4, 0, 4);
 	bg_palette_32(bgPal, bgPalLen / 4, 0);
 	bg_map_32(bgMap, bgMapLen / 4, 31);
 	
 	IO_DISPCNT = dispcnt_OBJ | dispcnt_obj_mapping_1D | dispcnt_mode(0) | dispcnt_BG0;
-	IO_BG0CNT = bg0cnt_cbb(0) | bg0cnt_sbb(31) | bg0cnt_4bpp | bg0cnt_size(1);
+	IO_BG0CNT = bg0cnt_cbb(0) | bg0cnt_sbb(31) | bg0cnt_4bpp | bg0cnt_size(BG_64x32);
 	
 	obj_attributes *bowser = &obj_reg_memory[0];
 	obj_affine *bowserAff = &obj_aff_memory[0];

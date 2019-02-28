@@ -14,14 +14,14 @@ int main(void) {
 	obj_clear_all();
 	
 	obj_tiles_32(metroidTiles, metroidTilesLen / 4, 4, 0, 8);
-	obj_palette_32(metroidPal, 0);
+	obj_palette_32(metroidPal, metroidPalLen / 4, 0);
 	
 	bg_tileset_32(bgTiles, bgTilesLen / 4, 0, 8);
 	bg_palette_32(bgPal, bgPalLen / 4, 0);
 	bg_map_32(bgMap, bgMapLen / 4, 31);
 	
 	IO_DISPCNT = dispcnt_mode(0) | dispcnt_BG0 | dispcnt_OBJ | dispcnt_obj_mapping_1D;
-	IO_BG0CNT = bg0cnt_cbb(0) | bg0cnt_sbb(31) | bg0cnt_8bpp | bg0cnt_size(0) | bg0cnt_mosaic;
+	IO_BG0CNT = bg0cnt_cbb(0) | bg0cnt_sbb(31) | bg0cnt_8bpp | bg0cnt_size(BG_32x32) | bg0cnt_mosaic;
 	IO_MOSAIC = bg_mosaic(bmh, bmv) | obj_mosaic(omh, omv);
 	
 	obj_attributes *metroid = &obj_reg_memory[0];

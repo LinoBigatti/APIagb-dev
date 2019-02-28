@@ -15,7 +15,7 @@ int main(void) {
 	
 	bg_map_32(bgMap, bgMapLen / 4, 28);
 	
-	IO_BG2CNT = bg2cnt_cbb(0) | bg2cnt_sbb(28) | bg2cnt_8bpp | bg2cnt_size(1);
+	IO_BG2CNT = bg2cnt_cbb(0) | bg2cnt_sbb(28) | bg2cnt_8bpp | bg2cnt_size(BG_AFF_32x32);
 	IO_DISPCNT = dispcnt_mode(2) | dispcnt_BG2;
 	
 	bg_affine *bgAff = &bg_aff_memory[2];

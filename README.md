@@ -146,6 +146,14 @@ This demo shows a background and a sprite, and applies a mosaic on them:
 make MosaicDemo
 ```
 
+### BlendDemo
+
+This demo shows various techniques with the blend features:
+
+```bash
+make BlendDemo
+```
+
 ## Testing on a real GBA
 
 All the demos were built for cartridges, but you can change this to multiboot by changing the `SPECS` variable of the demo Makefile to `gba_mb`.

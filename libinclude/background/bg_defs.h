@@ -23,4 +23,14 @@ typedef struct {
 
 #define bg_aff_memory ((bg_affine*)(MEM_IO))
 
+#define BG_32x32 0
+#define BG_64x32 1
+#define BG_32x64 2
+#define BG_64x64 3
+
+#define BG_AFF_16x16 0
+#define BG_AFF_32x32 1
+#define BG_AFF_64x64 2
+#define BG_AFF_128x128 3
+
 #endif

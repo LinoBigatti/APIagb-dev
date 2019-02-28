@@ -12,7 +12,7 @@ void bg_palette_16(const void *src_, u32 length, u32 palbank) {
 	}
 	int ii;
 	
-	for(ii = 0; ii < 16; ii++) {
+	for(ii = 0; ii < length; ii++) {
 		dst[ii] = src[ii];
 	}
 }

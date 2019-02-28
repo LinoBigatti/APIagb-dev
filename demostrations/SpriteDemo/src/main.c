@@ -12,7 +12,7 @@ int main(void) {
 	
 	obj_tiles_32(marioBrosTiles, marioBrosTilesLen / 4, 4, 0, 4);
 	
-	obj_palette_32(marioPalette, 0);
+	obj_palette_32(marioPalette, marioPaletteLength / 4, 0);
 	
 	IO_DISPCNT = dispcnt_OBJ | dispcnt_obj_mapping_1D;
 	

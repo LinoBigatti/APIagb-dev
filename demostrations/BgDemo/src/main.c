@@ -18,7 +18,7 @@ int main(void) {
 	
 	bg_map_32(marioLevelMap, marioLevelMapLen / 4, 30);
 	
-	IO_BG0CNT = bg0cnt_cbb(0) | bg0cnt_sbb(30) | bg0cnt_4bpp | bg0cnt_size(1);
+	IO_BG0CNT = bg0cnt_cbb(0) | bg0cnt_sbb(30) | bg0cnt_4bpp | bg0cnt_size(BG_64x32);
 	IO_DISPCNT = dispcnt_mode(0) | dispcnt_BG0;
 	
 	while(1) {
