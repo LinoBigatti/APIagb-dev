@@ -20,10 +20,10 @@ void setup_gfx(void) {
 	obj_attributes *sprite2 = &obj_reg_memory[1];
 	
 	sprite1->attr0 = attr0_build(attr0_Y(0), attr0_blending, attr0_normal, 0, attr0_4bpp, attr0_square);
-	sprite1->attr1 = attr1_regular_build(attr1_X(170), 0, 0, attr1_size(2));
+	sprite1->attr1 = attr1_regular_build(attr1_X(170), 0, 0, attr1_size(OBJ_32x32));
 	sprite1->attr2 = attr2_build(attr2_base_tile(0), attr2_priority(0), attr2_palbank(0));
 	sprite2->attr0 = attr0_build(attr0_Y(16), attr0_blending, attr0_normal, 0, attr0_4bpp, attr0_square);
-	sprite2->attr1 = attr1_regular_build(attr1_X(186), 0, 0, attr1_size(2));
+	sprite2->attr1 = attr1_regular_build(attr1_X(186), 0, 0, attr1_size(OBJ_32x32));
 	sprite2->attr2 = attr2_build(attr2_base_tile(16), attr2_priority(1), attr2_palbank(0));
 	
 	IO_BLDCNT = bldcnt_ABG0 | bldcnt_AOBJ | bldcnt_ABG1 | bldcnt_black;

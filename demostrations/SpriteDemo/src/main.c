@@ -21,7 +21,7 @@ int main(void) {
 	u32 x = 0, y = 0, hflip = 0, vflip = 0, basetile = 0;
 	
 	mario->attr0 = attr0_build(attr0_Y(0), attr0_regular, attr0_normal, 0, attr0_4bpp, attr0_square);
-	mario->attr1 = attr1_regular_build(attr1_X(0), 0, 0, attr1_size(1));
+	mario->attr1 = attr1_regular_build(attr1_X(0), 0, 0, attr1_size(OBJ_16x16));
 	mario->attr2 = attr2_build(attr2_base_tile(0), attr2_priority(0), attr2_palbank(0));
 	
 	while(1) {

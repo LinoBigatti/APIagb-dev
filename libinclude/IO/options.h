@@ -95,6 +95,66 @@ static inline u16 bg3cnt_sbb(u16 sbb)
 static inline u16 bg3cnt_size(u16 size)
 { return size << 14; }
 
+//IO_WIN0H
+static inline u16 win0h_right(u8 right)
+{ return right; }
+static inline u16 win0h_left(u8 left)
+{ return left << 8; }
+
+//IO_WIN0V
+static inline u16 win0v_bottom(u8 bottom)
+{ return bottom; }
+static inline u16 win0v_top(u8 top)
+{ return top << 8; }
+
+//IO_WIN1H
+static inline u16 win1h_right(u8 right)
+{ return right; }
+static inline u16 win1h_left(u8 left)
+{ return left << 8; }
+
+//IO_WIN1V
+static inline u16 win1v_bottom(u8 bottom)
+{ return bottom; }
+static inline u16 win1v_top(u8 top)
+{ return top << 8; }
+
+//IO_WININ
+#define winin_win0BG0 1
+#define winin_win0BG1 1 << 1
+#define winin_win0BG2 1 << 2
+#define winin_win0BG3 1 << 3
+#define winin_win0OBJ 1 << 4
+#define winin_win0BLD 1 << 5
+static inline u16 winin_win0(u16 bg0, u16 bg1, u16 bg2, u16 bg3, u16 obj, u16 bld)
+{ return bg0 | bg1 | bg2 | bg3 | obj | bld; }
+#define winin_win1BG0 1 << 8
+#define winin_win1BG1 1 << 9
+#define winin_win1BG2 1 << 10
+#define winin_win1BG3 1 << 11
+#define winin_win1OBJ 1 << 12
+#define winin_win1BLD 1 << 13
+static inline u16 winin_win1(u16 bg0, u16 bg1, u16 bg2, u16 bg3, u16 obj, u16 bld)
+{ return bg0 | bg1 | bg2 | bg3 | obj | bld; }
+
+//IO_WINOUT
+#define winout_winoutBG0 1
+#define winout_winoutBG1 1 << 1
+#define winout_winoutBG2 1 << 2
+#define winout_winoutBG3 1 << 3
+#define winout_winoutOBJ 1 << 4
+#define winout_winoutBLD 1 << 5
+static inline u16 winout_winout(u16 bg0, u16 bg1, u16 bg2, u16 bg3, u16 obj, u16 bld)
+{ return bg0 | bg1 | bg2 | bg3 | obj | bld; }
+#define winout_winobjBG0 1 << 8
+#define winout_winobjBG1 1 << 9
+#define winout_winobjBG2 1 << 10
+#define winout_winobjBG3 1 << 11
+#define winout_winobjOBJ 1 << 12
+#define winout_winobjBLD 1 << 13
+static inline u16 winin_winobj(u16 bg0, u16 bg1, u16 bg2, u16 bg3, u16 obj, u16 bld)
+{ return bg0 | bg1 | bg2 | bg3 | obj | bld; }
+
 //IO_MOSAIC
 static inline u16 mosaic_BH(u16 BH)
 { return BH << 0; }

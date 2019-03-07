@@ -29,7 +29,7 @@ int main(void) {
 	u32 x = 0, y = 0, angle = 0, sx = 256, sy = 256, doubleFlag = attr0_normal, hx = 0, hy = 0;
 	
 	bowser->attr0 = attr0_build(attr0_Y(y), attr0_affine, doubleFlag, 0, attr0_8bpp, attr0_square);
-	bowser->attr1 = attr1_affine_build(attr1_X(x), attr1_aff_index(0), attr1_size(3));
+	bowser->attr1 = attr1_affine_build(attr1_X(x), attr1_aff_index(0), attr1_size(OBJ_64x64));
 	bowser->attr2 = attr2_build(attr2_base_tile(0), attr2_priority(0), attr2_palbank(0));
 	
 	obj_aff_identity(bowserAff);

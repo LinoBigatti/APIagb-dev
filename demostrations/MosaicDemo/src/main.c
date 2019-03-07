@@ -27,7 +27,7 @@ int main(void) {
 	obj_attributes *metroid = &obj_reg_memory[0];
 	
 	metroid->attr0 = attr0_build(attr0_Y(0), attr0_regular, attr0_normal, attr0_mosaic, attr0_8bpp, attr0_square);
-	metroid->attr1 = attr1_regular_build(attr1_X(0), 0, 0, attr1_size(3));
+	metroid->attr1 = attr1_regular_build(attr1_X(0), 0, 0, attr1_size(OBJ_64x64));
 	metroid->attr2 = attr2_build(attr2_base_tile(0), attr2_priority(0), attr2_palbank(0));
 	
 	while(1) {
