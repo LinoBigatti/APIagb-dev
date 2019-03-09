@@ -152,7 +152,7 @@ static inline u16 winout_winout(u16 bg0, u16 bg1, u16 bg2, u16 bg3, u16 obj, u16
 #define winout_winobjBG3 1 << 11
 #define winout_winobjOBJ 1 << 12
 #define winout_winobjBLD 1 << 13
-static inline u16 winin_winobj(u16 bg0, u16 bg1, u16 bg2, u16 bg3, u16 obj, u16 bld)
+static inline u16 winout_winobj(u16 bg0, u16 bg1, u16 bg2, u16 bg3, u16 obj, u16 bld)
 { return bg0 | bg1 | bg2 | bg3 | obj | bld; }
 
 //IO_MOSAIC
