@@ -23,8 +23,8 @@ static inline u32 attr0_Y(u8 y)
 #define attr0_8bpp 1 << 13
 
 #define attr0_square 0
-#define attr0_vertical_rect 1 << 14
-#define attr0_horizontal_rect 2 << 14
+#define attr0_horizontal_rect 1 << 14
+#define attr0_vertical_rect 2 << 14
 
 static inline u16 attr0_build(u32 y, u32 render_mode, u32 gfx_mode, u32 mosaic, u32 color_mode, u32 shape)
 { return y | render_mode | gfx_mode | mosaic | color_mode | shape; }
