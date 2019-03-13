@@ -46,6 +46,20 @@
 #define IO_BLDALPHA (*(u16*)(MEM_IO + 0x0052))
 #define IO_BLDY (*(u16*)(MEM_IO + 0x0054))
 
+//DMA registers.
+#define IO_DMA0SRC (*(u32*)(MEM_IO + 0x00B0))
+#define IO_DMA0DST (*(u32*)(MEM_IO + 0x00B4))
+#define IO_DMA0CNT (*(u32*)(MEM_IO + 0x00B8))
+#define IO_DMA1SRC (*(u32*)(MEM_IO + 0x00BC))
+#define IO_DMA1DST (*(u32*)(MEM_IO + 0x00C0))
+#define IO_DMA1CNT (*(u32*)(MEM_IO + 0x00C4))
+#define IO_DMA2SRC (*(u32*)(MEM_IO + 0x00C8))
+#define IO_DMA2DST (*(u32*)(MEM_IO + 0x00CC))
+#define IO_DMA2CNT (*(u32*)(MEM_IO + 0x00D0))
+#define IO_DMA3SRC (*(u32*)(MEM_IO + 0x00D4))
+#define IO_DMA3DST (*(u32*)(MEM_IO + 0x00D8))
+#define IO_DMA3CNT (*(u32*)(MEM_IO + 0x00DC))
+
 //Key registers.
 #define IO_KEYINPUT (*(vu16*)(MEM_IO + 0x0130))
 #define IO_KEYCNT (*(u16*)(MEM_IO + 0x0132))
