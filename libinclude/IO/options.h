@@ -197,21 +197,21 @@ static inline u16 bldy_value(u32 value)
 static inline u32 dmacnt_length(u32 length)
 { return length; }
 #define dmacnt_incdst 0
-#define dmacnt_decdst 1 << 15
-#define dmacnt_fixeddst 2 << 15
-#define dmacnt_resetdst 3 << 15
+#define dmacnt_decdst 1 << 21
+#define dmacnt_fixeddst 2 << 21
+#define dmacnt_resetdst 3 << 21
 #define dmacnt_incsrc 0
-#define dmacnt_decsrc 1 << 17
-#define dmacnt_fixedsrc 2 << 17
-#define dmacnt_repeat 1 << 19
+#define dmacnt_decsrc 1 << 23
+#define dmacnt_fixedsrc 2 << 23
+#define dmacnt_repeat 1 << 25
 #define dmacnt_16 0
-#define dmacnt_32 1 << 20
-#defien dmacnt_inmediate 0
-#define dmacnt_vblank 1 << 21
-#define dmacnt_hblank 2 << 21
-#define dmacnt_fifo 3 << 21
-#define dmacnt_IRQ 1 << 23
-#define dmacnt_enable 1 << 24
+#define dmacnt_32 1 << 26
+#define dmacnt_inmediate 0
+#define dmacnt_vblank 1 << 28
+#define dmacnt_hblank 2 << 28
+#define dmacnt_fifo 3 << 28
+#define dmacnt_IRQ 1 << 30
+#define dmacnt_enable 1 << 31
 
 //IO_KEYINPUT
 #define keyinput_A 1
