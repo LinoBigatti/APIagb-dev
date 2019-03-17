@@ -3,9 +3,17 @@
 #ifndef READ_16_H
 #define READ_16_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/types.h>
 #include <save/save_defs.h>
 
-u16 read_16(u32 i);
+extern u16 read_16(u32 i);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

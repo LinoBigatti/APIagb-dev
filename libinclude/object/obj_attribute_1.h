@@ -3,6 +3,10 @@
 #ifndef OBJ_ATTR_1_H
 #define OBJ_ATTR_1_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/types.h>
 
 static inline u32 attr1_X(u16 x)
@@ -22,5 +26,9 @@ static inline u16 attr1_regular_build(u32 x, u32 hflip, u32 vflip, u32 size)
 
 static inline u16 attr1_affine_build(u32 x, u32 aff_index, u32 size)
 { return x | aff_index | size; }
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

@@ -3,6 +3,10 @@
 #ifndef OBJ_DEFS_H
 #define OBJ_DEFS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/types.h>
 #include <basics/mem_regs.h>
 
@@ -40,5 +44,9 @@ typedef struct {
 
 #define obj_reg_memory ((obj_attributes*)MEM_OAM)
 #define obj_aff_memory ((obj_affine*)MEM_OAM)
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

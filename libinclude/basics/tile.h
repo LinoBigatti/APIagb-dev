@@ -3,6 +3,10 @@
 #ifndef TILE_H
 #define TILE_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/types.h>
 #include <basics/mem_regs.h>
 
@@ -18,5 +22,9 @@ typedef tile8 charblock8[256];
 
 #define tile_vram ((charblock*)MEM_VRAM)
 #define tile8_vram ((charblock8*)MEM_VRAM)
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

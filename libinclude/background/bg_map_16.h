@@ -3,9 +3,17 @@
 #ifndef BG_MAP_16_H
 #define BG_MAP_16_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/types.h>
 #include <background/bg_defs.h>
 
 extern void bg_map_16(const void *src_, u32 length, u32 sbb);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

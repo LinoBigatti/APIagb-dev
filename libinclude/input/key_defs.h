@@ -3,6 +3,10 @@
 #ifndef KEY_DEFS_H
 #define KEY_DEFS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/types.h>
 #include <IO/options.h>
 
@@ -19,5 +23,9 @@
 
 extern u16 current_key;
 extern u16 previous_key;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

@@ -3,6 +3,10 @@
 #ifndef IO_OPTIONS_H
 #define IO_OPTIONS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/types.h>
 #include <IO/regions.h>
 
@@ -224,5 +228,9 @@ static inline u32 dmacnt_length(u32 length)
 #define keyinput_down 1 << 7
 #define keyinput_R 1 << 8
 #define keyinput_L 1 << 9
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

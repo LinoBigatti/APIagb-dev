@@ -3,12 +3,12 @@
 #ifndef M5_FILL_H
 #define M5_FILL_H
 
-#include <basics/types.h>
-#include <bitmap/mode5/m5_defs.h>
-
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#include <basics/types.h>
+#include <bitmap/mode5/m5_defs.h>
 
 extern void m5_fill(m5_color clr_);
 

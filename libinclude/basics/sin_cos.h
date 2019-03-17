@@ -3,6 +3,10 @@
 #ifndef SIN_COS_H
 #define SIN_COS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/sin_lut.h>
 
 static inline int fast_sin(unsigned int theta)
@@ -10,5 +14,9 @@ static inline int fast_sin(unsigned int theta)
 
 static inline int fast_cos(unsigned int theta)
 { return sine_table[((theta >> 7) + 128) & 0x1FF]; }
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

@@ -3,6 +3,10 @@
 #ifndef TYPES_H
 #define TYPES_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -35,5 +39,9 @@ typedef const signed char cs8;
 typedef const signed short cs16;
 typedef const signed int cs32;
 typedef const signed long long cs64;
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

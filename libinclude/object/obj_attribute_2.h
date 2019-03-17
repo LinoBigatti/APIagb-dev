@@ -3,6 +3,10 @@
 #ifndef OBJ_ATTR_2_H
 #define OBJ_ATTR_2_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/types.h>
 
 static inline u32 attr2_base_tile(u16 tile)
@@ -16,5 +20,9 @@ static inline u32 attr2_palbank(u8 bank)
 
 static inline u16 attr2_build(u32 tile, u32 prio, u32 bank)
 { return tile | prio | bank; }
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

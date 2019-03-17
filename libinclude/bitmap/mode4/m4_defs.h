@@ -3,6 +3,10 @@
 #ifndef M4_DEFS_H
 #define M4_DEFS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/mem_regs.h>
 #include <basics/types.h>
 
@@ -18,5 +22,9 @@ extern u16 *m4_back_vram;
 #define m4_page_2 ((u16*)(MEM_VRAM + 0xA000))
 
 #define m4_pal_memory ((u16*)(MEM_PAL))
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

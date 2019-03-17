@@ -3,6 +3,10 @@
 #ifndef IO_REGIONS_H
 #define IO_REGIONS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/mem_regs.h>
 #include <basics/types.h>
 
@@ -63,5 +67,9 @@
 //Key registers.
 #define IO_KEYINPUT (*(vu16*)(MEM_IO + 0x0130))
 #define IO_KEYCNT (*(u16*)(MEM_IO + 0x0132))
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

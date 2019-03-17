@@ -3,6 +3,10 @@
 #ifndef OBJ_ATTR_0_H
 #define OBJ_ATTR_0_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/types.h>
 
 static inline u32 attr0_Y(u8 y)
@@ -28,5 +32,9 @@ static inline u32 attr0_Y(u8 y)
 
 static inline u16 attr0_build(u32 y, u32 render_mode, u32 gfx_mode, u32 mosaic, u32 color_mode, u32 shape)
 { return y | render_mode | gfx_mode | mosaic | color_mode | shape; }
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

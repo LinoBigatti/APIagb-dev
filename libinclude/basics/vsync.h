@@ -3,11 +3,11 @@
 #ifndef VSYNC_H
 #define VSYNC_H
 
-#include <IO/regions.h>
-
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+#include <IO/regions.h>
 
 extern void Vsync(void);
 

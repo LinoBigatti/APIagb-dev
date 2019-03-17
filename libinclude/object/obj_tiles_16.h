@@ -8,4 +8,8 @@
 
 extern void obj_tiles_16(const void *src_, u32 length, u32 cb, u32 tile, u32 depth);
 
+#ifdef __cplusplus
+}
+#endif
+
 #endif

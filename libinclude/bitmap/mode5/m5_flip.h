@@ -3,13 +3,13 @@
 #ifndef M5_FLIP_H
 #define M5_FLIP_H
 
-#include <bitmap/mode5/m5_defs.h>
-#include <IO/regions.h>
-#include <IO/options.h>
-
 #ifdef _cplusplus
 extern "C" {
 #endif
+
+#include <bitmap/mode5/m5_defs.h>
+#include <IO/regions.h>
+#include <IO/options.h>
 
 extern void m5_flip(void);
 

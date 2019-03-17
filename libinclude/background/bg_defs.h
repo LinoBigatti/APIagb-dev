@@ -3,6 +3,10 @@
 #ifndef BG_DEFS_H
 #define BG_DEFS_H
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <basics/types.h>
 #include <basics/mem_regs.h>
 
@@ -32,5 +36,9 @@ typedef struct {
 #define BG_AFF_32x32 1
 #define BG_AFF_64x64 2
 #define BG_AFF_128x128 3
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif
