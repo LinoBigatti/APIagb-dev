@@ -217,6 +217,39 @@ static inline u32 dmacnt_length(u32 length)
 #define dmacnt_IRQ 1 << 30
 #define dmacnt_enable 1 << 31
 
+//IO_TM0DATA
+static inline u16 tm0data_read(void)
+{ return IO_TM0DATA; }
+static inline u16 tm0data_start(u16 start)
+{ return start; }
+
+//IO_TM1DATA
+static inline u16 tm1data_read(void)
+{ return IO_TM1DATA; }
+static inline u16 tm1data_start(u16 start)
+{ return start; }
+
+//IO_TM2DATA
+static inline u16 tm2data_read(void)
+{ return IO_TM2DATA; }
+static inline u16 tm2data_start(u16 start)
+{ return start; }
+
+//IO_TM3DATA
+static inline u16 tm3data_read(void)
+{ return IO_TM3DATA; }
+static inline u16 tm3data_start(u16 start)
+{ return start; }
+
+//IO_TMCNT
+#define tmcnt_freq_1 0
+#define tmcnt_freq_64 1
+#define tmcnt_freq_256 2
+#define tmcnt_freq_1024 3
+#define tmcnt_cascade 1 << 2
+#define tmcnt_IRQ 1 << 6
+#define tmcnt_enable 1 << 7
+
 //IO_KEYINPUT
 #define keyinput_A 1
 #define keyinput_B 1 << 1

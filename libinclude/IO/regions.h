@@ -64,6 +64,16 @@ extern "C" {
 #define IO_DMA3DST (*(u32*)(MEM_IO + 0x00D8))
 #define IO_DMA3CNT (*(u32*)(MEM_IO + 0x00DC))
 
+//Timer registers.
+#define IO_TM0DATA (*(u16*)(MEM_IO + 0x0100))
+#define IO_TM0CNT (*(u16*)(MEM_IO + 0x0102))
+#define IO_TM1DATA (*(u16*)(MEM_IO + 0x0104))
+#define IO_TM1CNT (*(u16*)(MEM_IO + 0x0106))
+#define IO_TM2DATA (*(u16*)(MEM_IO + 0x0108))
+#define IO_TM2CNT (*(u16*)(MEM_IO + 0x010A))
+#define IO_TM3DATA (*(u16*)(MEM_IO + 0x010C))
+#define IO_TM3CNT (*(u16*)(MEM_IO + 0x010E))
+
 //Key registers.
 #define IO_KEYINPUT (*(vu16*)(MEM_IO + 0x0130))
 #define IO_KEYCNT (*(u16*)(MEM_IO + 0x0132))
