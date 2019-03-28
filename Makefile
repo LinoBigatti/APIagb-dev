@@ -147,6 +147,13 @@ BlendDemo :
 BlendDemo_clean :
 	@cd demostrations/BlendDemo && $(MAKE) clean
 
+TimerDemo :
+	@cd demostrations/TimerDemo && $(MAKE)
+	@echo $@ compiled and builded.
+
+TimerDemo_clean :
+	@cd demostrations/TimerDemo && $(MAKE) clean
+
 #Build API.
 APIagb : $(LIBCOBJS) $(LIBTHUMBOBJS) $(LIBARMOBJS)
 	@$(AR) $(ARFLAGS) libAPIagb.a $^
@@ -193,3 +200,4 @@ err_no_target:
 	@echo "AffineBgDemo: Build the demo for the affine BG handlers."
 	@echo "MosaicDemo: Build the demo for the mosaic handler."
 	@echo "BlendDemo: Build the demo for the blend handlers."
+	@echo "BlendDemo: Build the demo for the GBA timers."
