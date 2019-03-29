@@ -40,6 +40,8 @@ typedef const signed short cs16;
 typedef const signed int cs32;
 typedef const signed long long cs64;
 
+typedef void (*fnptr)(void);
+
 #ifdef __cplusplus
 }
 #endif

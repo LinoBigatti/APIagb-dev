@@ -262,6 +262,25 @@ static inline u16 tm3data_start(u16 start)
 #define keyinput_R 1 << 8
 #define keyinput_L 1 << 9
 
+//IO_IE & IO_IF & IO_IFBIOS
+#define vblank_IRQ 1
+#define hblank_IRQ 1 << 1
+#define vcount_IRQ 1 << 2
+#define timer0_IRQ 1 << 3
+#define timer1_IRQ 1 << 4
+#define timer2_IRQ 1 << 5
+#define timer3_IRQ 1 << 6
+#define serial_IRQ 1 << 7
+#define DMA0_IRQ 1 << 8
+#define DMA1_IRQ 1 << 9
+#define DMA2_IRQ 1 << 10
+#define DMA3_IRQ 1 << 11
+#define keypad_IRQ 1 << 12
+#define cartridge_IRQ 1 << 13
+
+//IO_IME
+#define ime_enable 1
+
 #ifdef __cplusplus
 }
 #endif
