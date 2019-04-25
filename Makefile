@@ -154,6 +154,13 @@ TimerDemo :
 TimerDemo_clean :
 	@cd demostrations/TimerDemo && $(MAKE) clean
 
+InterruptDemo :
+	@cd demostrations/InterruptDemo && $(MAKE)
+	@echo $@ compiled and builded.
+
+InterruptDemo_clean :
+	@cd demostrations/InterruptDemo && $(MAKE) clean
+
 #Build API.
 APIagb : $(LIBCOBJS) $(LIBTHUMBOBJS) $(LIBARMOBJS)
 	@$(AR) $(ARFLAGS) libAPIagb.a $^
@@ -200,4 +207,5 @@ err_no_target:
 	@echo "AffineBgDemo: Build the demo for the affine BG handlers."
 	@echo "MosaicDemo: Build the demo for the mosaic handler."
 	@echo "BlendDemo: Build the demo for the blend handlers."
-	@echo "BlendDemo: Build the demo for the GBA timers."
+	@echo "TimerDemo: Build the demo for the GBA timers."
+	@echo "InterruptDemo: Build the demo for the GBA interrupt system."

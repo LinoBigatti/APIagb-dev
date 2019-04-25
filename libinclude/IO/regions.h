@@ -79,9 +79,9 @@ extern "C" {
 #define IO_KEYCNT (*(u16*)(MEM_IO + 0x0132))
 
 //Interrupt registers.
-#define IO_IE (*(u16*)(MEM_IO + 0x02000))
-#define IO_IF (*(u16*)(MEM_IO + 0x02002))
-#define IO_IME (*(u16*)(MEM_IO + 0x02008))
+#define IO_IE (*(u16*)(MEM_IO + 0x0200))
+#define IO_IF (*(u16*)(MEM_IO + 0x0202))
+#define IO_IME (*(u16*)(MEM_IO + 0x0208))
 #define IO_IFBIOS (*(u16*)(0x03007FF8)) //Bruh
 #define IO_ISR (*(fnptr*)(0x03007FFC)) //Bruh
 
