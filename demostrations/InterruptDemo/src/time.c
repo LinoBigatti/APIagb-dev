@@ -9,7 +9,7 @@ void delay(int s) {
 	int seconds = tm3data_read();
 	for(int ii = 0; ii < s; ii++) {
 		while(seconds == tm3data_read()) {
-			asm("swi 0x05");
+			asm("swi 0x05"); //VBlankIntrWait
 		}
 	}
 }
