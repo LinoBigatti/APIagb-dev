@@ -28,6 +28,12 @@ typedef struct {
 	s16 pd;
 } __attribute__((aligned(4))) obj_affine;
 
+typedef struct {
+	s16 zx;
+	s16 zy;
+	u16 alpha;
+} __attribute__((aligned(4))) obj_affine_src;
+
 #define OBJ_8x8 0
 #define OBJ_16x8 0
 #define OBJ_8x16 0

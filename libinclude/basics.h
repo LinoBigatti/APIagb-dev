@@ -11,5 +11,6 @@
 #include <basics/sin_cos.h>
 #include <basics/sin_lut.h>
 #include <basics/window.h>
+#include <basics/bios.h>
 
 #endif

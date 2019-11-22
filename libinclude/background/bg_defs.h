@@ -23,6 +23,16 @@ typedef struct {
 	s32 y;
 } __attribute__((aligned(4))) bg_affine;
 
+typedef struct {
+	s32 tex_x;
+	s32 tex_y;
+	s16 scr_x;
+	s16 scr_y;
+	s16 zoom_x;
+	s16 zoom_y;
+	u16 alpha;
+} __attribute__((aligned(4))) bg_affine_src;
+
 #define bg_pal_memory ((u16*)(MEM_PAL))
 
 #define bg_aff_memory ((bg_affine*)(MEM_IO))

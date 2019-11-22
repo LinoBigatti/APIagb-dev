@@ -1,12 +1,10 @@
 #include <basics/types.h>
+#include <basics/bios.h>
 #include <IO.h>
 #include <bitmap/mode4.h>
 
 #include "time.h"
 #include "interrupt.h"
-
-void vBlankIntrWait()
-{   asm("swi 0x05");   }
 
 int main(void) {
 	IO_ISR = interrupt;
@@ -17,6 +15,6 @@ int main(void) {
 	IO_DISPCNT = dispcnt_mode(4) | dispcnt_BG2;
 	m4_fill(0);
 	while(1) {
-		vBlankIntrWait();
+		VBlankIntrWait();
 	}
 }
