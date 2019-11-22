@@ -262,6 +262,21 @@ static inline u16 tm3data_start(u16 start)
 #define keyinput_R 1 << 8
 #define keyinput_L 1 << 9
 
+//IO_KEYINPUT
+#define keycnt_A 1
+#define keycnt_B 1 << 1
+#define keycnt_select 1 << 2
+#define keycnt_start 1 << 3
+#define keycnt_right 1 << 4
+#define keycnt_left 1 << 5
+#define keycnt_up 1 << 6
+#define keycnt_down 1 << 7
+#define keycnt_R 1 << 8
+#define keycnt_L 1 << 9
+#define keycnt_IRQ 1 << 14
+#define keycnt_OR 0
+#define keycnt_AND 1 << 15
+
 //IO_IE & IO_IF & IO_IFBIOS
 #define vblank_IRQ 1
 #define hblank_IRQ 1 << 1
