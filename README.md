@@ -162,6 +162,14 @@ This demo shows a changing BG using the GBA timers and mode 4:
 make TimerDemo
 ```
 
+### InterruptDemo
+
+This demo is a remake of AffineSpriteDemo, but using hardware interrupt and various SWIs:
+
+```bash
+make InterruptDemo
+```
+
 ## Testing on a real GBA
 
 All the demos were built for cartridges, but you can change this to multiboot by changing the `SPECS` variable of the demo Makefile to `gba_mb`.
