@@ -3,7 +3,7 @@
 
 #include <basics/types.h>
 #include <IO.h>
-#include <bitmap/mode4/m4_defs.h>
+#include <input.h>
 
 IWRAM_CODE void interrupt(void);
 

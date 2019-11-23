@@ -40,6 +40,10 @@ typedef	struct { //This one was copied from TONC because I have no idea how it w
 	u8	server_type;
 } MultiBootParam;
 
+#define FILL 1 << 24
+#define DATASIZE_16 0
+#define DATASIZE_32 1 << 26
+
 void SoftReset(void); //Swi 0x00
 
 void RegisterRamReset(u32 flags); //Swi 0x01
@@ -68,9 +72,9 @@ void CpuFastSet(const void *src, void *dst, u32 mode); //Swi 0x0C
 
 u32 BiosCheckSum(void); //Swi 0x0D
 
-void BgAffineSet(const bg_affine_src *src, bg_affine *dst, s32 num);
+void BgAffineSet(const bg_affine_src *src, bg_affine *dst, s32 num); //Swi 0x0E
 
-void ObjAffineSet(const obj_affine_src *src, void *dst, s32 num, s32 offset);
+void ObjAffineSet(const obj_affine_src *src, void *dst, s32 num, s32 offset); //Swi 0x0F
 
 void BitUnPack(const void *src, void *dst, const BupData Bup); //Swi 0x10
 
@@ -102,17 +106,17 @@ void SoundDriverVSync(void); //Swi 0x1D
 
 void SoundChannelClear(void); //Swi 0x1E
 
-//MidiKeyToFreq (Undocumented)
+//MidiKeyToFreq (Undocumented, need sound infrastructure.)
 
-//MusicPlayerOpen (Undocumented)
+//MusicPlayerOpen (Undocumented, need sound infrastructure.)
 
-//MusicPlayerStart (Undocumented)
+//MusicPlayerStart (Undocumented, need sound infrastructure.)
 
-//MusicPlayerStop (Undocumented)
+//MusicPlayerStop (Undocumented, need sound infrastructure.)
 
-//MusicPlayerContinue (Undocumented)
+//MusicPlayerContinue (Undocumented, need sound infrastructure.)
 
-//MusicPlayerFadeOut (Undocumented)
+//MusicPlayerFadeOut (Undocumented, need sound infrastructure.)
 
 int MultiBoot(MultiBootParam* mb, u32 mode);
 
@@ -123,6 +127,8 @@ void CustomHalt(int filler, u32 params); //Swi 0x27 (Undocumented)
 void SoundDriverVSyncOff(void); //Swi 0x28
 
 void SoundDriverVSyncOn(void); //Swi 0x29
+
+void MusicPlayerGetJumpList(void); //Swi 0x2A (undocumented)
 
 #ifdef __cplusplus
 }

@@ -29,8 +29,8 @@ typedef struct {
 } __attribute__((aligned(4))) obj_affine;
 
 typedef struct {
-	s16 zx;
-	s16 zy;
+	s16 sx;
+	s16 sy;
 	u16 alpha;
 } __attribute__((aligned(4))) obj_affine_src;
 
@@ -43,6 +43,7 @@ typedef struct {
 #define OBJ_32x32 2
 #define OBJ_16x32 2
 #define OBJ_32x16 2
+#define OBJ_64x64 3
 #define OBJ_64x32 3
 #define OBJ_32x64 3
 
