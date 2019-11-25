@@ -217,6 +217,109 @@ static inline u32 dmacnt_length(u32 length)
 #define dmacnt_IRQ 1 << 30
 #define dmacnt_enable 1 << 31
 
+//IO_SND1SWEEP
+static inline u32 snd1sweep_shift(u32 shift)
+{ return shift & 0x7; }
+#define snd1sweep_inc 0
+#define snd1sweep_dec 1 << 3
+static inline u32 snd1sweep_time(u32 t)
+{ return (t & 0x7) << 4; }
+
+//IO_SND1CNT
+static inline u32 snd1cnt_len(u32 len)
+{ return len & 0x1F; }
+#define snd1cnt_duty1_8 0
+#define snd1cnt_duty1_4 1 << 6
+#define snd1cnt_duty1_2 2 << 6
+#define snd1cnt_duty3_4 3 << 6
+static inline u32 snd1cnt_time(u32 t)
+{ return (t & 0x7) << 8; }
+#define snd1cnt_dec 0
+#define snd1cnt_inc 1 << 11
+static inline u32 snd1cnt_initial(u32 initial)
+{ return (initial & 0xF) << 12; }
+
+//IO_SND1FREQ
+static inline u32 snd1freq_rate(u32 rate)
+{ return rate & 0x7FF; }
+#define snd1freq_hold 0
+#define snd1freq_timed 1 << 14
+#define snd1freq_reset 1 << 15
+
+//IO_SND2CNT
+static inline u32 snd2cnt_len(u32 len)
+{ return len & 0x1F; }
+#define snd2cnt_duty1_8 0
+#define snd2cnt_duty1_4 1 << 6
+#define snd2cnt_duty1_2 2 << 6
+#define snd2cnt_duty3_4 3 << 6
+static inline u32 snd2cnt_time(u32 t)
+{ return (t & 0x7) << 8; }
+#define snd2cnt_dec 0
+#define snd2cnt_inc 1 << 11
+static inline u32 snd2cnt_initial(u32 initial)
+{ return (initial & 0xF) << 12; }
+
+//IO_SND2FREQ
+static inline u32 snd2freq_rate(u32 rate)
+{ return rate & 0x7FF; }
+#define snd2freq_hold 0
+#define snd2freq_timed 1 << 14
+#define snd2freq_reset 1 << 15
+
+//IO_SND3SEL
+//IO_SND3CNT
+//IO_SND3FREQ
+//IO_SND4CNT
+//IO_SND4FREQ
+
+//IO_SNDDMGCNT
+static inline u32 snddmgcnt_lvol(u32 lvol)
+{ return lvol & 0x7; }
+static inline u32 snddmgcnt_rvol(u32 rvol)
+{ return (rvol & 0x7) << 4; }
+#define snddmgcnt_lsqr1 1 << 8
+#define snddmgcnt_lsqr2 1 << 9
+#define snddmgcnt_lwave 1 << 10
+#define snddmgcnt_lnoise 1 << 11
+#define snddmgcnt_rsqr1 1 << 12
+#define snddmgcnt_rsqr2 1 << 13
+#define snddmgcnt_rwave 1 << 14
+#define snddmgcnt_rnoise 1 << 15
+
+//IO_SNDDSCNT
+#define snddscnt_DMG25 0
+#define snddscnt_DMG50 1
+#define snddscnt_DMG100 2
+#define snddscnt_A50 0
+#define snddscnt_A100 1 << 2
+#define snddscnt_B50 0
+#define snddscnt_B100 1 << 2
+#define snddscnt_AR 1 << 8
+#define snddscnt_AL 1 << 9
+#define snddscnt_ATMR0 0
+#define snddscnt_ATMR1 1 << 10
+#define snddscnt_Areset 1 << 11
+#define snddscnt_BR 1 << 12
+#define snddscnt_BL 1 << 13
+#define snddscnt_BTMR0 0
+#define snddscnt_BTMR1 1 << 14
+#define snddscnt_Breset 1 << 15
+
+//IO_SNDSTAT
+static inline u16 sndstat_sqr1(void)
+{ return (IO_SNDSTAT & 1); }
+static inline u16 sndstat_sqr2(void)
+{ return (IO_SNDSTAT & (1 << 1)) >> 1; }
+static inline u16 sndstat_wave(void)
+{ return (IO_SNDSTAT & (1 << 2)) >> 2; }
+static inline u16 sndstat_noise(void)
+{ return (IO_SNDSTAT & (1 << 3)) >> 3; }
+#define sndstat_disable 0
+#define sndstat_enable 1 << 7
+
+//IO_SNDBIAS
+
 //IO_TM0DATA
 static inline u16 tm0data_read(void)
 { return IO_TM0DATA; }

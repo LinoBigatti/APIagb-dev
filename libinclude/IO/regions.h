@@ -50,6 +50,22 @@ extern "C" {
 #define IO_BLDALPHA (*(u16*)(MEM_IO + 0x0052))
 #define IO_BLDY (*(u16*)(MEM_IO + 0x0054))
 
+//Sound registers (based on pin8's naming).
+#define IO_SND1SWEEP (*(u16*)(MEM_IO + 0x0060))
+#define IO_SND1CNT (*(u16*)(MEM_IO + 0x0062))
+#define IO_SND1FREQ (*(u16*)(MEM_IO + 0x0064))
+#define IO_SND2CNT (*(u16*)(MEM_IO + 0x0068))
+#define IO_SND2FREQ (*(u16*)(MEM_IO + 0x006C))
+#define IO_SND3SEL (*(u16*)(MEM_IO + 0x0070))
+#define IO_SND3CNT (*(u16*)(MEM_IO + 0x0072))
+#define IO_SND3FREQ (*(u16*)(MEM_IO + 0x0074))
+#define IO_SND4CNT (*(u16*)(MEM_IO + 0x0078))
+#define IO_SND4FREQ (*(u16*)(MEM_IO + 0x007C))
+#define IO_SNDDMGCNT (*(u16*)(MEM_IO + 0x0080))
+#define IO_SNDDSCNT (*(u16*)(MEM_IO + 0x0082))
+#define IO_SNDSTAT (*(u16*)(MEM_IO + 0x0084))
+#define IO_SNDBIAS (*(u16*)(MEM_IO + 0x0088))
+
 //DMA registers.
 #define IO_DMA0SRC (*(u32*)(MEM_IO + 0x00B0))
 #define IO_DMA0DST (*(u32*)(MEM_IO + 0x00B4))
