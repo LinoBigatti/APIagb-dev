@@ -12,10 +12,12 @@ extern "C" {
 typedef enum {
     NOTE_C=0, NOTE_CIS, NOTE_D,   NOTE_DIS, 
     NOTE_E,   NOTE_F,   NOTE_FIS, NOTE_G, 
-    NOTE_GIS, NOTE_A,   NOTE_BES, NOTE_B
+    NOTE_GIS, NOTE_A,   NOTE_BES, NOTE_B, NOTE_S
 } noteId;
 
-const u32 sndRates[12];
+extern const u32 sndRates[12];
+
+extern const s32 octave_internal[8];
 
 #ifdef __cplusplus
 }

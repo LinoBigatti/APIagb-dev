@@ -1,100 +1,14 @@
 #include <basics/types.h>
-#include <basics/bios.h>
 #include <basics/tile.h>
 #include <IO.h>
 #include <input.h>
 #include <background/bg_defs.h>
-#include <sound/get_note_rate.h>
 
 #include "marioLevel.h"
 #include "interrupt.h"
+#include "music.h"
 
-void delay(u32 cycles) {
-	for(int i = 0; i < cycles; i++) {
-		VBlankIntrWait();
-	}
-}
-
-#define playNote(note, octave) IO_SND1FREQ = snd1freq_rate(get_note_rate(note, octave)) | snd1freq_reset
-
-void musicalScale(u32 octave) {
-	playNote(NOTE_C, octave);
-	delay(30);
-	playNote(NOTE_D, octave);
-	delay(30);
-	playNote(NOTE_E, octave);
-	delay(30);
-	playNote(NOTE_F, octave);
-	delay(30);
-	playNote(NOTE_G, octave);
-	delay(30);
-	playNote(NOTE_A, octave);
-	delay(30);
-	playNote(NOTE_B, octave);
-	delay(30);
-	playNote(NOTE_C, octave + 1);
-	delay(30);
-}
-
-void happyBirthday(void) {
-	playNote(NOTE_C, 0);
-	delay(15);
-	playNote(NOTE_C, 0);
-	delay(15);
-	playNote(NOTE_D, 0);
-	delay(30);
-	playNote(NOTE_C, 0);
-	delay(30);
-	playNote(NOTE_F, 0);
-	delay(30);
-	playNote(NOTE_E, 0);
-	delay(60);
-
-	playNote(NOTE_C, 0);
-	delay(15);
-	playNote(NOTE_C, 0);
-	delay(15);
-	playNote(NOTE_D, 0);
-	delay(30);
-	playNote(NOTE_C, 0);
-	delay(30);
-	playNote(NOTE_G, 0);
-	delay(30);
-	playNote(NOTE_F, 0);
-	delay(60);
-
-	playNote(NOTE_C, 0);
-	delay(15);
-	playNote(NOTE_C, 0);
-	delay(15);
-	playNote(NOTE_C, 1);
-	delay(30);
-	playNote(NOTE_A, 0);
-	delay(30);
-	playNote(NOTE_F, 0);
-	delay(15);
-	playNote(NOTE_F, 0);
-	delay(15);
-	playNote(NOTE_E, 0);
-	delay(30);
-	playNote(NOTE_D, 0);
-	delay(30);
-
-	playNote(NOTE_BES, 0);
-	delay(15);
-	playNote(NOTE_BES, 0);
-	delay(15);
-	playNote(NOTE_A, 0);
-	delay(30);
-	playNote(NOTE_F, 0);
-	delay(30);
-	playNote(NOTE_G, 0);
-	delay(30);
-	playNote(NOTE_F, 0);
-	delay(60);
-}
-
-int octave = 0;
+u32 song = 0;
 
 int main(void) {
 	CpuFastSet((u32*)&marioLevelTiles, (u32*)&tile_vram[0][0], 532);
@@ -121,14 +35,21 @@ int main(void) {
 		VBlankIntrWait();
 
 		if(key_start_pressing(BUTTON_R)) {
-			octave++;
+			if(octave != 7) { octave++; }
 		}
 		if(key_start_pressing(BUTTON_L)) {
-			octave--;
+			if(octave != 0) { octave--; }
+		}
+
+		if(key_start_pressing(BUTTON_RIGHT)) {
+			if(song != 15) { song++; } else { song = 0; }
+		}
+		if(key_start_pressing(BUTTON_LEFT)) {
+			if(song != 0) { song--; } else { song = 15; }
 		}
 
 		if(key_start_pressing(BUTTON_A)) {
-			happyBirthday();
+			songs[song]();
 		}
 	}
 	return 0;

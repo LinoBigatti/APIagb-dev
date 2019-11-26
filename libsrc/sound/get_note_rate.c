@@ -3,5 +3,5 @@
 #include <sound/get_note_rate.h>
 
 u32 get_note_rate(u32 note, u32 octave) {
-	return 2048 - (sndRates[note] >> (octave + 4));
+	if(note != NOTE_S) { return 2048 - (sndRates[note] >> (octave_internal[octave] + 4)); } else { return 0; }
 }
