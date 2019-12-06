@@ -1,23 +1,17 @@
 #include <basics/types.h>
-#include <basics/tile.h>
 #include <IO.h>
 #include <input.h>
-#include <background/bg_defs.h>
 
 #include "marioLevel.h"
 #include "interrupt.h"
 #include "music.h"
+#include "gfx.h"
 
 u32 song = 0;
 
 int main(void) {
-	CpuFastSet((u32*)&marioLevelTiles, (u32*)&tile_vram[0][0], 532);
-	CpuFastSet((u32*)&marioLevelPal, (u32*)&bg_pal_memory[0], 128);
-	CpuFastSet((u32*)&marioLevelMap, (u32*)&se_memory[30][0], 1024);
+	loadGFX();
 
-	IO_BG0CNT = bg0cnt_cbb(0) | bg0cnt_sbb(30) | bg0cnt_4bpp | bg0cnt_size(BG_64x32);
-	IO_DISPCNT = dispcnt_mode(0) | dispcnt_BG0;
-	
 	IO_SNDSTAT = sndstat_enable;
 
 	IO_SNDDMGCNT = snddmgcnt_lvol(100) | snddmgcnt_rvol(100) | snddmgcnt_lsqr1 | snddmgcnt_rsqr1;
@@ -42,10 +36,10 @@ int main(void) {
 		}
 
 		if(key_start_pressing(BUTTON_RIGHT)) {
-			if(song != 15) { song++; } else { song = 0; }
+			if(song != 7) { song++; nextScreen(); } else { song = 0; setScreen(0); }
 		}
 		if(key_start_pressing(BUTTON_LEFT)) {
-			if(song != 0) { song--; } else { song = 15; }
+			if(song != 0) { song--; prevScreen(); } else { song = 7; setScreen(7); }
 		}
 
 		if(key_start_pressing(BUTTON_A)) {

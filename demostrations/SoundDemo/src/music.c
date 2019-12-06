@@ -10,13 +10,15 @@ void delay(u32 cycles) {
 	}
 }
 
-void (*songs[16])() = {
+void (*songs[8])() = {
 	musicalScale,
 	octaveScale,
 	happyBirthday,
 	TTLS,
 	snake,
-	SMBoverworld
+	SMBoverworld,
+	OTJ,
+	TLOZoverworld
 };
 
 void playTune(u32 *notes, u32 *lengths, u32 *octaves, u32 length) {
@@ -263,4 +265,114 @@ u32 SMBoverworldOctaves[33] = {
 
 void SMBoverworld(void) {
 	playTune((u32*)&SMBoverworldNotes, (u32*)&SMBoverworldLengths, (u32*)&SMBoverworldOctaves, 33);
+}
+
+u32 OTJNotes[58] = {
+	NOTE_E, NOTE_F, NOTE_G,
+	NOTE_G, NOTE_F, NOTE_E, NOTE_D,
+	NOTE_C, NOTE_C, NOTE_D, NOTE_E,
+	NOTE_E, NOTE_D, NOTE_D,
+	NOTE_E, NOTE_F, NOTE_G,
+	NOTE_G, NOTE_F, NOTE_E, NOTE_D,
+	NOTE_C, NOTE_C, NOTE_D, NOTE_E,
+	NOTE_D, NOTE_C, NOTE_C,
+	NOTE_C, NOTE_E, NOTE_C,
+	NOTE_D, NOTE_E, NOTE_F, NOTE_E, NOTE_C,
+	NOTE_D, NOTE_E, NOTE_F, NOTE_E, NOTE_D,
+	NOTE_C, NOTE_D, NOTE_D,
+	NOTE_E, NOTE_F, NOTE_G,
+	NOTE_G, NOTE_F, NOTE_E, NOTE_D,
+	NOTE_C, NOTE_C, NOTE_D, NOTE_E,
+	NOTE_D, NOTE_C, NOTE_C
+};
+
+u32 OTJLengths[58] = {
+	60, 30, 30,
+	30, 30, 30, 30,
+	30, 30, 30, 30,
+	45, 15, 60,
+	60, 30, 30,
+	30, 30, 30, 30,
+	30, 30, 30, 30,
+	45, 15, 60,
+	60, 30, 30,
+	30, 15, 15, 30, 30,
+	30, 15, 15, 30, 30,
+	30, 30, 60,
+	60, 30, 30,
+	30, 30, 30, 30,
+	30, 30, 30, 30,
+	45, 15, 60,
+};
+
+u32 OTJOctaves[58] = {
+	3, 3, 3,
+	3, 3, 3, 3,
+	3, 3, 3, 3,
+	3, 3, 3,
+	3, 3, 3,
+	3, 3, 3, 3,
+	3, 3, 3, 3,
+	3, 3, 3,
+	3, 3, 3,
+	3, 3, 3, 3, 3,
+	3, 3, 3, 3, 3,
+	3, 3, 3,
+	3, 3, 3,
+	3, 3, 3, 3,
+	3, 3, 3, 3,
+	3, 3, 3,
+};
+
+void OTJ(void) {
+	playTune((u32*)&OTJNotes, (u32*)&OTJLengths, (u32*)&OTJOctaves, 58);
+}
+
+u32 TLOZoverworldNotes[57] = {
+	NOTE_BES, NOTE_BES, NOTE_F, NOTE_F, NOTE_BES, 
+	NOTE_GIS, NOTE_FIS, NOTE_GIS, 
+	NOTE_BES, NOTE_BES, NOTE_F, NOTE_F, NOTE_BES, 
+	NOTE_GIS, NOTE_FIS, NOTE_GIS, 
+	NOTE_S,
+	NOTE_BES, NOTE_F, NOTE_F, NOTE_BES, NOTE_BES, NOTE_B, NOTE_D, NOTE_DIS, 
+	NOTE_F, NOTE_F, NOTE_F, NOTE_F, NOTE_G, NOTE_A,
+	NOTE_C, NOTE_C, NOTE_C, NOTE_C, NOTE_B, NOTE_A,
+	NOTE_B, NOTE_A, NOTE_G, NOTE_G,
+	NOTE_E, NOTE_F, NOTE_G, NOTE_G, NOTE_F, NOTE_E, 
+	NOTE_D, NOTE_E, NOTE_F, NOTE_F, NOTE_E, NOTE_D,
+	NOTE_C, NOTE_D, NOTE_E, NOTE_F
+};
+
+u32 TLOZoverworldLengths[57] = {
+	60, 15, 15, 15, 15,
+	7, 7, 60,
+	60, 15, 15, 15, 15,
+	7, 7, 60,
+	60,
+	30, 30, 15, 15, 7, 7, 7, 7,
+	60, 15, 15, 15, 15, 15,
+	60, 15, 15, 15, 15, 15,
+	15, 15, 60, 30,
+	15, 15, 30, 30, 15, 15,
+	15, 15, 30, 30, 15, 15,
+	15, 15, 60, 30
+};
+
+u32 TLOZoverworldOctaves[57] = {
+	3, 3, 3, 3, 3,
+	3, 3, 3,
+	3, 3, 3, 3, 3,
+	3, 3, 3,
+	0,
+	3, 3, 3, 3, 3, 4, 4, 4, 
+	4, 4, 4, 4, 4, 4,
+	5, 5, 5, 5, 4, 4,  
+	4, 4, 4, 4, 
+	4, 4, 4, 4, 4, 4, 
+	4, 4, 4, 4, 4, 4, 
+	4, 4, 4, 4
+};
+
+void TLOZoverworld(void) {
+	playTune((u32*)&TLOZoverworldNotes, (u32*)&TLOZoverworldLengths, (u32*)&TLOZoverworldOctaves, 57);
 }

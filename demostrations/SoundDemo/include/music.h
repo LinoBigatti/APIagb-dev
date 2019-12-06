@@ -16,7 +16,7 @@ void delay(u32 cycles);
 
 #define playNote(note, octave) IO_SND1FREQ = snd1freq_rate(get_note_rate(note, octave)) | snd1freq_reset
 
-void (*songs[16])();
+void (*songs[8])();
 
 void musicalScale(void);
 
@@ -29,5 +29,9 @@ void TTLS(void);
 void snake(void); //How the fuck is this called lmao.
 
 void SMBoverworld(void);
+
+void OTJ(void);
+
+void TLOZoverworld(void);
 
 #endif
