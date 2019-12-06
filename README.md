@@ -170,6 +170,15 @@ This demo is a remake of AffineSpriteDemo, but using hardware interrupt and vari
 make InterruptDemo
 ```
 
+### SoundDemo
+
+This demo plays some tunes on the square wave channels:
+
+```bash
+make SoundDemo
+```
+
+
 ## Testing on a real GBA
 
 All the demos were built for cartridges, but you can change this to multiboot by changing the `SPECS` variable of the demo Makefile to `gba_mb`.

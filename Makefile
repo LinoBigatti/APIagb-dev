@@ -216,4 +216,4 @@ err_no_target:
 	@echo "BlendDemo: Build the demo for the blend handlers."
 	@echo "TimerDemo: Build the demo for the GBA timers."
 	@echo "InterruptDemo: Build the demo for the GBA interrupt system and the BIOS software interrupts."
-	@echo "SoundDemo: Build the demo for the GBA sound controllers."
+	@echo "SoundDemo: Build the demo for the GBA square wave sound generators."
