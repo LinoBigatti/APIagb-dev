@@ -268,8 +268,28 @@ static inline u32 snd2freq_rate(u32 rate)
 #define snd2freq_reset 1 << 15
 
 //IO_SND3SEL
+#define snd3sel_single 0
+#define snd3sel_multi 1 << 5
+#define snd3sel_bank0 0
+#define snd3sel_bank1 1 << 6 
+#define snd3sel_disable 0
+#define snd3sel_enable 1 << 7
+
 //IO_SND3CNT
+static inline u32 snd3freq_freq(u32 freq)
+{ return freq & 0xFF; }
+#define snd3cnt_mute 0
+#define snd3cnt_100 1 << 13
+#define snd3cnt_50 2 << 13
+#define snd3cnt_25 3 << 13
+#define snd3cnt_75 1 << 15
+
 //IO_SND3FREQ
+static inline u32 snd3freq_length(u32 freq)
+{ return freq & 0x7FF; }
+#define snd3freq_uselength 1 << 14
+#define snd3freq_reset 1 << 15
+
 //IO_SND4CNT
 //IO_SND4FREQ
 

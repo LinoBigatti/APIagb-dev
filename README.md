@@ -178,6 +178,13 @@ This demo plays some tunes on the square wave channels:
 make SoundDemo
 ```
 
+### DirectSoundDemo
+
+This demo uses the Direct Sound mixer and channels:
+
+```bash
+make DirectSoundDemo
+```
 
 ## Testing on a real GBA
 

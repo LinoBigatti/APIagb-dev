@@ -168,6 +168,13 @@ SoundDemo :
 SoundDemo_clean :
 	@cd demostrations/SoundDemo && $(MAKE) clean
 
+DirectSoundDemo :
+	@cd demostrations/DirectSoundDemo && $(MAKE)
+	@echo $@ compiled and builded.
+
+DirectSoundDemo_clean :
+	@cd demostrations/DirectSoundDemo && $(MAKE) clean
+
 #Build API.
 APIagb : $(LIBCOBJS) $(LIBTHUMBOBJS) $(LIBARMOBJS)
 	@$(AR) $(ARFLAGS) libAPIagb.a $^
@@ -217,3 +224,4 @@ err_no_target:
 	@echo "TimerDemo: Build the demo for the GBA timers."
 	@echo "InterruptDemo: Build the demo for the GBA interrupt system and the BIOS software interrupts."
 	@echo "SoundDemo: Build the demo for the GBA square wave sound generators."
+	@echo "DirectSoundDemo: Build the demo for the Direct Sound driver."
