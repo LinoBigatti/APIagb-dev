@@ -2,9 +2,8 @@
 
 void interrupt(void) {
 	u32 irqs = IO_IF & IO_IE;
-	if(irqs & vblank_IRQ) {}
-	if(irqs & timer1_IRQ) {
-		IO_DMA1CNT = 0;
+	if(irqs & vblank_IRQ) {
+		ds_swapBuffer();
 	}
 	IO_IFBIOS = irqs;
 	IO_IF = irqs;

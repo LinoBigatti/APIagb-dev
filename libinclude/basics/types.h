@@ -42,6 +42,8 @@ typedef const signed long long cs64;
 
 typedef void (*fnptr)(void);
 
+#define NULL 0
+
 #define EWRAM_DATA __attribute__((section(".ewram")))
 #define IWRAM_DATA __attribute__((section(".iwram")))
 #define EWRAM_BSS __attribute__((section(".sbss")))
