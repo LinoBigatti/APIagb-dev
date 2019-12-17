@@ -10,31 +10,52 @@
 #include "interrupt.h"
 
 #include "pianoC5.h"
+#include "pianoG5.h"
+#include "tom.h"
 
 s8 buffer[FREQ43959_SIZE * 2];
 
-volatile soundChannel channelA = {
-	.data = (s8*)&pianoC5, .pos = 0, .inc = 4109, /*(44100 << 12) / 43959 (rounded)*/ .vol = 64, .length = 41816 << 12, .loop = NULL
+soundChannel channels[4] = {
+	{
+		.data = (s8*)&tom, .pos = 0, .inc = 4109, /*(44100 << 12) / 43959 (rounded)*/ .vol = 64, .length = 17732 << 12, .loop = 17732 << 12
+	},
+	{
+		.data = (s8*)&pianoC5, .pos = 0, .inc = 4109, /*(44100 << 12) / 43959 (rounded)*/ .vol = 64, .length = 41816 << 12, .loop = 41816 << 12
+	},
+	{
+		.data = (s8*)&pianoG5, .pos = 0, .inc = 4109, /*(44100 << 12) / 43959 (rounded)*/ .vol = 64, .length = 88951 << 12, .loop = 88951 << 12
+	},
+	{
+		.data = NULL, .pos = 0, .inc = 0, .vol = 0, .length = 0, .loop = NULL
+	}
 };
 
-void ds_mainMixer(void) {
-	if(channelA.data != NULL) {
-		for(int i = 0; i < mainBuffer.size; i++) {
-			mainBuffer.freeBuffer[i] = channelA.data[channelA.pos >> 12] * channelA.vol >> 6;
-			channelA.pos += channelA.inc;
+void ds_mainMixer(soundChannel *channels, int channelNumber) {
+	s16 mixBuffer[mainBuffer.size];
+	int i = 0;
+	dma3_16(&i, &mixBuffer, mainBuffer.size, dmacnt_fixedsrc, dmacnt_incdst, dmacnt_inmediate, 0);
 
-			if(channelA.pos >= channelA.length) {
-				if(channelA.loop != NULL) {
-					while(channelA.pos >= channelA.length) {
-						channelA.pos -= channelA.loop;
+	for(int j = 0; j < channelNumber; j++) {
+		if(channels[j].data != NULL) {
+			for(int i = 0; i < mainBuffer.size; i++) {
+				mixBuffer[i] += channels[j].data[channels[j].pos >> 12] * channels[j].vol;
+				channels[j].pos += channels[j].inc;
+
+				if(channels[j].pos >= channels[j].length) {
+					if(channels[j].loop != NULL) {
+						while(channels[j].pos >= channels[j].length) {
+							channels[j].pos -= channels[j].loop;
+						}
+					} else {
+						channels[j].data = NULL;
 					}
-				} else {
-					channelA.data = NULL;
 				}
 			}
 		}
-	} else {
-		for(int i = 0; i < mainBuffer.size; i++) { mainBuffer.freeBuffer[i] = 0; }
+	}
+
+	for(i = 0; i < mainBuffer.size; i++) {
+		mainBuffer.freeBuffer[i] = (mixBuffer[i] >> 6) >> (channelNumber >> 1);
 	}
 }
 
@@ -55,6 +76,6 @@ int main(void) {
 
 	while(1) {
 		VBlankIntrWait();
-		ds_mainMixer();
+		ds_mainMixer((soundChannel*)&channels, 4);
 	}
 }
