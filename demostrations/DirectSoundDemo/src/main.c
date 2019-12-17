@@ -5,6 +5,7 @@
 #include <timers.h>
 
 #include <sound/ds_initbuffer.h>
+#include <sound/ds_mainmixer.h>
 #include <sound/snd_defs.h>
 
 #include "interrupt.h"
@@ -29,35 +30,6 @@ soundChannel channels[4] = {
 		.data = NULL, .pos = 0, .inc = 0, .vol = 0, .length = 0, .loop = NULL
 	}
 };
-
-void ds_mainMixer(soundChannel *channels, int channelNumber) {
-	s16 mixBuffer[mainBuffer.size];
-	int i = 0;
-	dma3_16(&i, &mixBuffer, mainBuffer.size, dmacnt_fixedsrc, dmacnt_incdst, dmacnt_inmediate, 0);
-
-	for(int j = 0; j < channelNumber; j++) {
-		if(channels[j].data != NULL) {
-			for(int i = 0; i < mainBuffer.size; i++) {
-				mixBuffer[i] += channels[j].data[channels[j].pos >> 12] * channels[j].vol;
-				channels[j].pos += channels[j].inc;
-
-				if(channels[j].pos >= channels[j].length) {
-					if(channels[j].loop != NULL) {
-						while(channels[j].pos >= channels[j].length) {
-							channels[j].pos -= channels[j].loop;
-						}
-					} else {
-						channels[j].data = NULL;
-					}
-				}
-			}
-		}
-	}
-
-	for(i = 0; i < mainBuffer.size; i++) {
-		mainBuffer.freeBuffer[i] = (mixBuffer[i] >> 6) >> (channelNumber >> 1);
-	}
-}
 
 int main(void) {
 	IO_ISR = interrupt;
